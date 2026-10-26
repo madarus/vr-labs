@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Подключение библиотеки A-Frame -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+<!-- Основная 3D-сцена -->
+<a-scene>
+
+    <!-- Загрузка 3D-модели -->
+    <a-assets>
+        <a-asset-item
+            id="model"
+            src="model.glb">
+        </a-asset-item>
+    </a-assets>
+
+    <!-- Добавление загруженной модели в сцену -->
+    <a-entity
+        gltf-model="#model"
+        position="0 0 -3"
+        rotation="0 0 0"
+        scale="1 1 1">
+    </a-entity>
+
+    <!-- Плоскость под моделью -->
+    <a-plane
+        position="0 0 -3"
+        rotation="-90 0 0"
+        width="10"
+        height="10"
+        color="#AAAAAA">
+    </a-plane>
+
+    <!-- Общее освещение сцены -->
+    <a-light
+        type="ambient"
+        color="#BBB">
+    </a-light>
+
+    <!-- Направленный источник света -->
+    <a-light
+        type="directional"
+        position="1 2 1"
+        intensity="1">
+    </a-light>
+
+    <!-- Цвет фона сцены -->
+    <a-sky color="#ECECEC"></a-sky>
+
+</a-scene>
+
+</body>
+</html>
+```
